@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dell.service.UserService">
+	<resultMap id="result" type="User">
+
+		<result property="idusers" column="idusers" />
+		<result property="name" column="name" />
+		<result property="gender" column="gender" />
+		<result property="age" column="age" />
+		<result property="role" column="role" />
+		<result property="skills" column="skills" />
+		<result property="address" column="address" />
+	</resultMap>
+
+	<select id="getUserbyId" resultMap="result">
+		SELECT * FROM users WHERE
+		idusers	= #{uid};
+	</select>
+
+
+	<select id="getAllUsers" resultMap="result">
+		SELECT * FROM users;
+	</select>
+
+<!-- 	idusers, name, gender, age, skills, address, role -->
+	
+	<select id="insertUser" resultMap="result">
+		INSERT INTO users(name, gender, age, skills, address, role)
+		VALUES(#{name}, #{gender}, #{age}, #{skills}, #{address}, #{role});
+	</select>
+
+	<delete id="deleteUser" parameterType="int">
+		DELETE FROM users WHERE idusers = #{uid}
+	</delete>
+	
+	<update id='updateUser'>
+    UPDATE users SET
+     	name= #{name},
+     	gender = #{gender},
+	     age = #{age},
+	     skills = #{skills},
+	     address = #{address},
+	     role = #{role}
+    WHERE idusers = #{idusers}
+  	</update>
+  	
+</mapper>
