@@ -26,7 +26,7 @@
 
 <!-- 	idusers, name, gender, age, skills, address, role -->
 	
-	<select id="insertUser" resultMap="result">
+	<select id="insertUser" resultMap="result" parameterType="User">
 		INSERT INTO users(name, gender, age, skills, address, role)
 		VALUES(#{name}, #{gender}, #{age}, #{skills}, #{address}, #{role});
 	</select>
@@ -34,7 +34,7 @@
 	<delete id="deleteUser" parameterType="int">
 		DELETE FROM users WHERE idusers = #{uid}
 	</delete>
-	
+	 
 	<update id='updateUser'>
     UPDATE users SET
      	name= #{name},
