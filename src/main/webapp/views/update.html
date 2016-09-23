@@ -1,0 +1,140 @@
+
+<div class="col-md-8">
+	<fieldset>
+
+		<!-- Form Name -->
+		<legend>Update User</legend>
+
+		<!-- Button Drop Down -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="buttondropdown">Select
+				User</label>
+			<div class="col-md-5">
+				<div class="dropdown">
+
+					<button type="button" id="selectdd"
+						class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						{{selectedItem}}
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" area-labelledby="selectdd">
+						<li ng-repeat="user in users">
+							<a ng-click="dropboxitemselected(user)">{{user.name}}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		
+		<form class="form-horizontal">
+
+			<!-- Form Name -->
+			<legend></legend>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="name">Name</label>
+				<div class="col-md-5">
+					<input id="name" name="name" ng-model="name" type="text" placeholder="Full Name"
+						class="form-control input-md" required="required">
+				</div>
+			</div>
+
+			<!-- Multiple Checkboxes (inline) -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="skills">Skills</label>
+				<!-- 				<div class="col-md-4"> -->
+				<!-- 					<label class="checkbox-inline" for="skills-0"> <input -->
+				<!-- 						type="checkbox" name="skills" id="skills-0" value="java"> -->
+				<!-- 						Java -->
+				<!-- 					</label> <label class="checkbox-inline" for="skills-1"> <input -->
+				<!-- 						type="checkbox" name="skills" id="skills-1" value="cpp"> -->
+				<!-- 						C++ -->
+				<!-- 					</label> <label class="checkbox-inline" for="skills-2"> <input -->
+				<!-- 						type="checkbox" name="skills" id="skills-2" value="php"> -->
+				<!-- 						PHP -->
+				<!-- 					</label> -->
+				<!-- 				</div> -->
+				<div class="col-md-5">
+					<input id="skills" name="skills" ng-model="skills" type="text" placeholder=""
+						class="form-control input-md" required="required">
+				</div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textarea">Address</label>
+				<div class="col-md-4">
+					<textarea class="form-control" ng-model="address" id="address_textarea"
+						name="address_textarea"></textarea>
+				</div>
+			</div>
+
+			<!-- Multiple Radios (inline) -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="role">Role</label>
+				<!-- 				<div class="col-md-4"> -->
+				<!-- 					<label class="radio-inline" for="role-0"> <input -->
+				<!-- 						type="radio" name="role" id="role-0" value="admin" -->
+				<!-- 						checked="checked"> Admin -->
+				<!-- 					</label> <label class="radio-inline" for="role-1"> <input -->
+				<!-- 						type="radio" name="role" id="role-1" value="non_admin"> -->
+				<!-- 						Non-admin -->
+				<!-- 					</label> -->
+				<!-- 				</div> -->
+				<div class="col-md-5">
+					<input id="role" name="role" ng-model="role" type="text" placeholder=""
+						class="form-control input-md" required="required">
+				</div>
+			</div>
+
+			<!-- Select Basic -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="age_group">Age
+					Group</label>
+<!-- 				<div class="col-md-5"> -->
+<!-- 					<select id="age_group" name="age_group" class="form-control"> -->
+<!-- 						<option value="20-30">20-30</option> -->
+<!-- 						<option value="30-40">30-40</option> -->
+<!-- 						<option value="40-50">40-50</option> -->
+<!-- 						<option value="50-60">50-60</option> -->
+<!-- 					</select> -->
+<!-- 				</div> -->
+				<div class="col-md-5">
+					<input id="age" name="age" ng-model="age" type="text" placeholder=""
+						class="form-control input-md" required="required">
+				</div>
+			</div>
+
+			<!-- Multiple Radios (inline) -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="gender">Gender</label>
+<!-- 				<div class="col-md-4"> -->
+<!-- 					<label class="radio-inline" for="gender-0"> <input -->
+<!-- 						type="radio" name="gender" id="gender-0" value="male" -->
+<!-- 						checked="checked"> Male -->
+<!-- 					</label> <label class="radio-inline" for="gender-1"> <input -->
+<!-- 						type="radio" name="gender" id="gender-1" value="female"> -->
+<!-- 						Female -->
+<!-- 					</label> -->
+<!-- 				</div> -->
+
+				<div class="col-md-5">
+					<input id="gender" name="gender" ng-model="gender" type="text" placeholder=""
+						class="form-control input-md" required="required">
+				</div>
+			</div>
+			<!-- Button -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="create_button"></label>
+				<div class="col-md-4">
+					<button id="create_button" ng-click="AddUser()" name="create_button"
+						class="btn btn-success">Update</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+		
+</div>
+

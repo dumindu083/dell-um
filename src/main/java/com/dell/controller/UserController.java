@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +38,7 @@ public class UserController {
 		userService.insertUser(user);
 	}
 
-	@RequestMapping(value = "/update", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/update", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void updateUser(@RequestBody User user) {
 		userService.updateUser(user);
 	}
@@ -46,4 +47,10 @@ public class UserController {
 	public void deleteUser(@PathVariable("did") int id) {
 		userService.deleteUser(id);
 	}
+	
+//	@RequestMapping(value="/first", method = RequestMethod.GET)
+//	public String getMovie(@PathVariable("first") String name, ModelMap model) {
+//		model.addAttribute("movie", name);
+//		return "index";
+//	}
 }
