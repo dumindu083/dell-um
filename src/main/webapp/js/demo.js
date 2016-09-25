@@ -49,7 +49,6 @@ MyApp.controller("CreateController", function($scope, UserApi) {
 
 MyApp.controller("DeleteController", function($scope) {
 
-	$scope.selectedItem = "Select A User";
 	$scope.isDeleteItemVisible = "false";
 	getEmployees();
 	function getEmployees() {
@@ -71,9 +70,29 @@ MyApp.controller("DeleteController", function($scope) {
 		$scope.role = item.Role;
 	};
 	
-	$scope.DeleteUser = function() {
-		
-	}
+//	$scope.DeleteUser = function() {
+//		alert("SAlll")
+//	}
+//	$scope.DeleteUser6 = function() {
+//		alert("SAl")
+//	}
+	
+	
+	//try this with scope variable of users
+	$scope.removeRow = function(name){				
+		var index = -1;		
+		var comArr = eval( $scope.companies );
+		for( var i = 0; i < comArr.length; i++ ) {
+			if( comArr[i].name === name ) {
+				index = i;
+				break;
+			}
+		}
+		if( index === -1 ) {
+			alert( "Something gone wrong" );
+		}
+		$scope.companies.splice( index, 1 );		
+	};
 	
 	
 	
@@ -81,10 +100,9 @@ MyApp.controller("DeleteController", function($scope) {
 
 MyApp.controller("UpdateController", function($scope, UserApi) {
 
-	$scope.selectedItem = "Select A User";
-	$scope.isDeleteItemVisible = "false";
 	getEmployees();
 	function getEmployees() {
+
 		UserApi.getUsers().success(function(users) {
 			$scope.users = users;
 		}).error(function(error) {

@@ -2,35 +2,10 @@
 <div class="col-md-8">
 	<fieldset>
 
-		<!-- Form Name -->
-		<legend>Update User</legend>
-
-		<!-- Button Drop Down -->
-		<div class="form-group">
-			<label class="col-md-4 control-label" for="buttondropdown">Select
-				User</label>
-			<div class="col-md-5">
-				<div class="dropdown">
-
-					<button type="button" id="selectdd"
-						class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-						{{selectedItem}}
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" area-labelledby="selectdd">
-						<li ng-repeat="user in users">
-							<a ng-click="dropboxitemselected(user)">{{user.name}}</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
-		
 		<form class="form-horizontal">
 
 			<!-- Form Name -->
-			<legend></legend>
+			<legend><h3 style="color:#3d9cf0;">Update Users</h3></legend>
 
 			<!-- Text input-->
 			<div class="form-group">

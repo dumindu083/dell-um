@@ -1,49 +1,48 @@
-<div class="row">
-		<h1 class="text-center text-danger">Users</h1>
-		<hr />
+<div class="col-md-8">
+	<fieldset>
+		<legend><h3 style="color:#3d9cf0;">All Users</h3></legend>
+		<div class="col-md-9 col-md-offset-1"> 
+						<input type="text" class="input-lg form-control"
+							placeholder="Search" id="user_name" ng-model="txtFilter" /> <br>
+						<br> <br>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Gender</th>
+									<th>Age</th>
+									<th>Skills</th>
+									<th>Address</th>
+									<th>Role</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="user in users|filter:txtFilter">
+									<td>{{user.name}}</td>
+									<td>{{user.gender}}</td>
+									<td>{{user.age}}</td>
+									<td>{{user.skills}}</td>
+									<td>{{user.address}}</td>
+									<td>{{user.role}}</td>
+									<td><a href="#Update">
+											<button id="update_button" name="create_button"
+												class="btn btn-success">Update</button>
+									</a></td>
+									<td><a href="#Delete">
+											<button id="delete_button" name="create_button"
+												class="btn btn-danger">Delete</button>
+									</a></td>
 
-		<form>
-			<div class="row">
-				<div class="col-md-9 col-md-offset-1">
-					<input type="text" class="input-lg form-control"
-						placeholder="Search" id="user_name" ng-model="txtFilter" /> <br>
-					<br> <br>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Gender</th>
-								<th>Age</th>
-								<th>Skills</th>
-								<th>Address</th>
-								<th>Role</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="user in users|filter:txtFilter">
-								<td>{{user.name}}</td>
-								<td>{{user.gender}}</td>
-								<td>{{user.age}}</td>
-								<td>{{user.skills}}</td>
-								<td>{{user.address}}</td>
-								<td>{{user.role}}</td>
-								<td><a href="#Update">
-								<button id="update_button" name="create_button" class="btn btn-success">Update</button>
-								</a>
-								</td>
-								<td><a href="#Delete">
-								<button id="delete_button" name="create_button" class="btn btn-danger">Delete</button>
-								</a>
-								</td>
-								
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</form>
-	</div>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
+
+	</fieldset>
+
+
+</div>
 <!-- 	<div class="row jumbotron"> -->
-<!-- 		<h2>{{message}}</h2> -->
+<!-- 		<h2>Hello WORLD</h2> -->
 <!-- 	</div> -->
