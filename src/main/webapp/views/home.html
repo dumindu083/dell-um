@@ -8,6 +8,7 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
+									<th>ID</th>
 									<th>Name</th>
 									<th>Gender</th>
 									<th>Age</th>
@@ -18,31 +19,26 @@
 							</thead>
 							<tbody>
 								<tr ng-repeat="user in users|filter:txtFilter">
+									<td>{{user.idusers}}</td>
 									<td>{{user.name}}</td>
 									<td>{{user.gender}}</td>
 									<td>{{user.age}}</td>
 									<td>{{user.skills}}</td>
 									<td>{{user.address}}</td>
 									<td>{{user.role}}</td>
-									<td><a href="#Update">
-											<button id="update_button" name="create_button"
-												class="btn btn-success">Update</button>
+									<td><a href="#Update/{{user.idusers}}/{{user.name}}/{{user.gender}}/{{user.age}}/{{user.skills}}/{{user.address}}/{{user.role}}" class="btn btn-success">Update
+<!-- 											<button id="delete_button" name="delete_button" -->
+<!-- 												class="btn btn-danger">Delete</button> -->
 									</a></td>
-									<td><a href="#Delete">
-											<button id="delete_button" name="create_button"
-												class="btn btn-danger">Delete</button>
+									<td><a href="#Delete/{{user.idusers}}" class="btn btn-danger">Delete
+<!-- 											<button id="delete_button" name="delete_button" -->
+<!-- 												class="btn btn-danger">Delete</button> -->
 									</a></td>
 
 								</tr>
 							</tbody>
 						</table>
 					</div>
-
-
 	</fieldset>
 
-
 </div>
-<!-- 	<div class="row jumbotron"> -->
-<!-- 		<h2>Hello WORLD</h2> -->
-<!-- 	</div> -->

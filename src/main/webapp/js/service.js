@@ -10,29 +10,32 @@ UserService.factory('UserApi', function($http) {
 	UserApi.getUsers = function() {
 		return $http.get(urlBase + "/allusers");
 	};
-	
-	UserApi.createUser = function(user){
+
+	UserApi.createUser = function(user) {
 		return $http.post(urlBase + '/insert', user);
 	};
-	
-	UserApi.updateUser = function(userToUpdate){
-		
+
+	UserApi.updateUser = function(userToUpdate) {
+		alert('Hena Gahanawa oooi 2');
 		var request = $http({
-			method: 'put',
-			url:urlBase+'/update',
-			data:userToUpdate
+			method : 'put',
+			url : urlBase + '/update',
+			data : userToUpdate
 		});
+		alert('Hena Gahanawa oooi 4');
 		return requset;
 	};
-	
-	UserApi.deleteUser = function(userToDelete){
-		var request = $http({
-			method: 'delete',
-			url:urlBase+'/delete',
-			data:userToDelete
-		});
-		return requset;
+
+	UserApi.deleteUser = function(id) {
+		// var request = $http({
+		// method: 'delete',
+		// url:urlBase+'/',
+		// data:userToDelete
+		// });
+		// return requset;
+		return $http.delete(urlBase + "/" + id);
+		alert(id);
 	};
-	
+
 	return UserApi;
 });

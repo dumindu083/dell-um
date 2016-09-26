@@ -22,7 +22,7 @@
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#Home">Home</a></li>
 			<li><a href="#Create">Create</a></li>
-			<li><a href="#Delete">Delete</a></li>
+<!-- 			<li><a href="#Delete">Delete</a></li> -->
 			<li><a href="#Update">Update</a></li>
 		</ul>
 		

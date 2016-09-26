@@ -36,14 +36,14 @@
 	</delete>
 	 
 	<update id='updateUser'>
-    UPDATE users SET
-     	name= #{name},
-     	gender = #{gender},
-	     age = #{age},
-	     skills = #{skills},
-	     address = #{address},
-	     role = #{role}
-    WHERE idusers = #{idusers}
+	UPDATE users SET
+	name= #{name},
+	gender = #{gender},
+	age = #{age},
+	skills = #{skills},
+	address = #{address},
+	role = #{role}
+	WHERE idusers = #{idusers}
   	</update>
   	
 </mapper>
